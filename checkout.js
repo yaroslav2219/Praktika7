@@ -36,7 +36,7 @@ new Vue({
 
             alert(`Thank you, ${this.customerName}! Your order has been placed.`);
             localStorage.removeItem("cart");
-            window.location.href = "main/index.html";
+            window.location.href = "index.html";
         }
     }
 });
