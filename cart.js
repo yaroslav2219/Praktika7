@@ -27,15 +27,17 @@ new Vue({
     },
     methods: {
         removeFromCart(id) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || {};
-            if (cart[id]) {
-                delete cart[id];
+            const stringId = id.toString(); 
+            const cart = { ...this.cart };
+            if (cart[stringId]) {
+                delete cart[stringId]; 
                 localStorage.setItem("cart", JSON.stringify(cart));
                 this.cart = cart;
             }
         },
         goToCheckout() {
-            window.location.href = "checkout.html";
+            window.location.href = "checkout.html"; 
         }
     }
 });
+

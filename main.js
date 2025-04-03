@@ -15,21 +15,36 @@ const app = Vue.createApp({
         addToCart(id) {
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
             if (!cart[id]) {
-                cart[id] = 1;
-                localStorage.setItem("cart", JSON.stringify(cart));
+                cart[id] = 1; 
+                localStorage.setItem("cart", JSON.stringify(cart)); 
             }
             this.btnVisible[id] = true; 
+        },
+        removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            if (cart[id]) {
+                delete cart[id]; 
+                localStorage.setItem("cart", JSON.stringify(cart)); 
+            }
+            this.btnVisible[id] = false; 
         },
         goToCart() {
             window.location.href = "cart.html"; 
         }
     },
+    computed: {
+        cartProducts() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            return this.products.filter(product => cart[product.id]); 
+        }
+    },
     mounted() {
         let cart = JSON.parse(localStorage.getItem("cart")) || {};
         this.products.forEach(product => {
-            this.btnVisible[product.id] = !!cart[product.id];
+            this.btnVisible[product.id] = !!cart[product.id]; 
         });
     }
 });
 
 app.mount("#app");
+

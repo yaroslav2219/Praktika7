@@ -36,7 +36,7 @@ new Vue({
 
             alert(`Thank you, ${this.customerName}! Your order has been placed.`);
             localStorage.removeItem("cart");
-            window.location.href = "https://yaroslav2219.github.io/Praktika7";
+            window.location.href = "index.html";
         }
     }
 });
