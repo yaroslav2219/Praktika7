@@ -21,8 +21,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home.html">Home</a></li>
                         <li><a href="company profile.html">Company Profile</a></li>
+                        <li><a href="index.html">Products</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="r&d.html">R & D</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -51,10 +52,10 @@
     
         <div class="product-grid">
             <div class="product" v-for="product in products" :key="product.id">
-                <a :href="'kiwi_one/index.html?id=' + product.id">
+                <a :href="'product.html?id=' + product.id">
                     <img :src="product.image" :alt="product.name">
                     <p>{{ product.name }}</p>
-                </a>
+                </a>                
                 <button v-if="!btnVisible[product.id]" @click="addToCart(product.id)">Add to Cart</button>
                 <button v-else>Go to Cart</button>                
             </div>

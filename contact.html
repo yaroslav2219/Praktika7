@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,6 +108,32 @@
         .checkbox-container input {
             margin-right: 10px;
         }
+        /* Контактні дані */
+        .contact-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 600px;
+        }
+        .contact-info h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .contact-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .contact-info a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-info a:hover {
+            color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -123,8 +149,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home.html">Home</a></li>
                         <li><a href="company profile.html">Company Profile</a></li>
+                        <li><a href="index.html">Products</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="r&d.html">R & D</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -133,6 +160,8 @@
             </div>
         </div>
     </header>
+    
+    <!-- Форма для контактів -->
     <div class="container">
         <h2>Contact Us</h2>
         <form action="#" method="POST">
@@ -163,6 +192,15 @@
             
             <button type="submit" class="form-button">Send Message</button>
         </form>
+    </div>
+
+    <!-- Блок контактної інформації -->
+    <div class="contact-info">
+        <h3>Our Contact Information</h3>
+        <p><strong>Address:</strong>P.O Box 90, Gedera 70750, Israel.</p>
+        <p><strong>Phone:</strong> <a href="tel:+972-8-944-9222">+972-8-944-9222</a></p>
+        <p><strong>Email:</strong> <a href="mailto:support@agridera.com">support@agridera.com</a></p>
+        <p><strong>Working Hours:</strong> Monday to Friday, 9 AM - 6 PM</p>
     </div>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі товару</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" width="113" height="56" alt="AGRIDERA">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="company profile.html">Company Profile</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="r&d.html">R & D</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="product-detail" id="app">
+        <div v-if="product" class="product-detail-container">
+            <div class="product-image-container">
+                <img :src="product.image" :alt="product.name" class="product-image">
+            </div>
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">Ціна: <strong>${{ product.price }}</strong></p>
+                <button @click="addToCart(product.id)" class="add-to-cart-btn">Додати до кошика</button>
+            </div>
+        </div>
+        <div v-else>
+            <p>Товар не знайдений.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Agridera Ltd. Всі права захищені.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="product.js"></script>
+</body>
+</html>

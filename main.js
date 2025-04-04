@@ -8,40 +8,43 @@ const app = Vue.createApp({
                 { id: 4, name: "Organic Kiwi", image: "kiwi4.jpg" },
                 { id: 5, name: "Tropical Kiwi", image: "kiwi5.jpg" }
             ],
-            btnVisible: {} 
+            btnVisible: {}
         };
     },
     methods: {
         addToCart(id) {
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
             if (!cart[id]) {
-                cart[id] = 1; 
-                localStorage.setItem("cart", JSON.stringify(cart)); 
+                cart[id] = 1;
+                localStorage.setItem("cart", JSON.stringify(cart));
             }
-            this.btnVisible[id] = true; 
+            this.btnVisible[id] = true;
         },
         removeFromCart(id) {
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
             if (cart[id]) {
-                delete cart[id]; 
-                localStorage.setItem("cart", JSON.stringify(cart)); 
+                delete cart[id];
+                localStorage.setItem("cart", JSON.stringify(cart));
             }
-            this.btnVisible[id] = false; 
+            this.btnVisible[id] = false;
         },
         goToCart() {
-            window.location.href = "cart.html"; 
+            window.location.href = "cart.html";
+        },
+        goToProduct(id) {
+            window.location.href = `product.html?id=${id}`;
         }
     },
     computed: {
         cartProducts() {
             let cart = JSON.parse(localStorage.getItem("cart")) || {};
-            return this.products.filter(product => cart[product.id]); 
+            return this.products.filter(product => cart[product.id]);
         }
     },
     mounted() {
         let cart = JSON.parse(localStorage.getItem("cart")) || {};
         this.products.forEach(product => {
-            this.btnVisible[product.id] = !!cart[product.id]; 
+            this.btnVisible[product.id] = !!cart[product.id];
         });
     }
 });
