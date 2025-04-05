@@ -116,14 +116,43 @@ nav ul li a:hover {
     font-size: 1rem;
     color: #7f8c8d;
 }
+.class {
+    background: #36503e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
 
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #2c3e50;
+.class-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.class-nav ul li a {
+    text-decoration: none;
     color: white;
 }
 
-footer p {
-    font-size: 0.9rem;
+.social-icons {
+    display: flex;
+    gap: 10px;
 }
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #6a994e;
+    color: white;
+}
+
